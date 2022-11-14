@@ -192,36 +192,38 @@ def calculoedad(fnacimiento):
 
 
 '''MENU PRINCIPAL'''
+def Menu():
+
+    respuesta = ""
+    while respuesta != '7':
+        print(10*"*"+"MENU PRINCIPAL VETERNARIA"+"*"*10)
+        print("[1] Cargar datos")
+        print("[2] Mostrar Mascotas")
+        print("[3] Agregar Mascota")
+        print("[4] Buscar Mascota")
+        print("[5] Listar Mascotas")
+        print("[6] Realizar copia en el dispositivo")
+        print("[7] Salir")
+        respuesta = input('Ingresa una opcion: ')
+        if respuesta == "1":
+            lista_mascotas = cargarMascota("DATOS VETERINARIA.csv")
+        elif respuesta == "2":
+            imprimirMascota(lista_mascotas)
+        elif respuesta == "3":
+            agregarMascota(lista_mascotas)
+        elif respuesta == "4":
+            buscarMascota(lista_mascotas)
+        elif respuesta == "5":
+            ordenarMascota(lista_mascotas)
+        elif respuesta == "6":
+            copia(lista_mascotas)
+        elif respuesta == "7":
+            respuesta = '7'
+        else:
+            print('Comando inválido')
+
+        time.sleep(1)
 
 
-respuesta = ""
-while respuesta != '7':
-    print(10*"*"+"MENU PRINCIPAL VETERNARIA"+"*"*10)
-    print("[1] Cargar datos")
-    print("[2] Mostrar Mascotas")
-    print("[3] Agregar Mascota")
-    print("[4] Buscar Mascota")
-    print("[5] Listar Mascotas")
-    print("[6] Realizar copia en el dispositivo")
-    print("[7] Salir")
-    respuesta = input('Ingresa una opcion: ')
-    if respuesta == "1":
-        lista_mascotas = cargarMascota("DATOS VETERINARIA.csv")
-    elif respuesta == "2":
-        imprimirMascota(lista_mascotas)
-    elif respuesta == "3":
-        agregarMascota(lista_mascotas)
-    elif respuesta == "4":
-        buscarMascota(lista_mascotas)
-    elif respuesta == "5":
-        ordenarMascota(lista_mascotas)
-    elif respuesta == "6":
-        copia(lista_mascotas)
-    elif respuesta == "7":
-        respuesta = '7'
-    else:
-        print('Comando inválido')
-
-    time.sleep(1)
-
-
+if __name__=="__main__":
+    Menu()
